@@ -53,7 +53,22 @@ class BrimoFinalReplication extends StatelessWidget {
                       colors: [Color(0xFF004D8C), Color(0xFF0074D9)],
                     ),
                   ),
-                )
+                  padding: EdgeInsets.only(top: 60, left: 20, right: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Selamat malam,", style: TextStyle(color: Colors.white70, fontSize: 14)),
+                          Text("iftahul lailyana", style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
+                        ],
+                      ),
+                      Icon(Icons.headset_mic_outlined, color: Colors.white),
+                    ],
+                  ),
+                ),
           ]
         )
       )
