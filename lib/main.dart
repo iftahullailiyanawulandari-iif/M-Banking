@@ -42,6 +42,18 @@ class BrimoFinalReplication extends StatelessWidget {
       body:SingleChildScrollView(
         child: column(
           childern: [
+            // 1. HEADER BIRU
+                Container(
+                  height: 220,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [Color(0xFF004D8C), Color(0xFF0074D9)],
+                    ),
+                  ),
+                )
           ]
         )
       )
