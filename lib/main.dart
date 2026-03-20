@@ -107,7 +107,7 @@ class BrimoFinalReplication extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 15, vertical: 8),
         child: container(
           padding: EdgeInsets.all(15),
-          decoration: BoxDecoration(
+          ecoration: BoxDecoration(
             gradient: LinearGradient(colors: [Color(0xFF00529C), Color(0xFF0074D9)]),
             borderRadius: BorderRadius.circular(12),
           ),
@@ -127,7 +127,42 @@ class BrimoFinalReplication extends StatelessWidget {
           ),
         ),
        ) ,
-       
+       // 4. KOTAK PUTIH 3 (PENCAIRAN)
+       Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15, vertical: 8),
+              child: Container(
+                padding: EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(12),
+                  boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 2)],
+                ),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        padding: EdgeInsets.symmetric(horizontal: 15, vertical: 8),
+                        decoration: BoxDecoration(color: Colors.grey[100], borderRadius: BorderRadius.circular(20)),
+                        child: Row(
+                          children: [
+                            Icon(Icons.search, color: Colors.grey, size: 18),
+                            SizedBox(width: 8),
+                            Text("Cari Fitur", style: TextStyle(color: Colors.grey, fontSize: 12)),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 15),
+                    Row(
+                      children: [
+                        Icon(Icons.edit_note, color: Colors.blue, size: 20),
+                        Text(" Atur Fitur", style: TextStyle(color: Colors.blue, fontSize: 11, fontWeight: FontWeight.bold)),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
       )
     )
   }
