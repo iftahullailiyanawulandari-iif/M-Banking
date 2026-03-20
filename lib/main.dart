@@ -101,6 +101,33 @@ class BrimoFinalReplication extends StatelessWidget {
                 ),
           ],
         ),
+        SizedBox(height: 180), //jarak aman
+        // 3. KOTAK PUTIH 2 (PROMO WARNA BIRU)
+       padding(
+        padding: EdgeInsets.symmetric(horizontal: 15, vertical: 8),
+        child: container(
+          padding: EdgeInsets.all(15),
+          decoration: BoxDecoration(
+            gradient: LinearGradient(colors: [Color(0xFF00529C), Color(0xFF0074D9)]),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Row(
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("Lengkapi Liburanmu", style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: Colors.white)),
+                    Text("Solusi Pinjaman praktis s.d. Rp 50 juta!", style: TextStyle(fontSize: 10, color: Colors.white70)),
+                  ],
+                ),
+              ),
+              Icon(Icons.arrow_forward_ios, size: 14, color: Colors.white),
+            ],
+          ),
+        ),
+       ) ,
+       
       )
     )
   }
