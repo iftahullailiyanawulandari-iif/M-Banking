@@ -1,48 +1,49 @@
-import "package:flutter/material.dart";
+import 'package:flutter/material.dart';
 
 void main() {
-  runApp(Material(
-    home:BrimoFinalReplication(),
-    debugShowCheckedModeBanner:
-    false,
-  ))
+  runApp(MaterialApp(
+    home: BriMoFinalReplication(),
+    debugShowCheckedModeBanner: false,
+  ));
 }
 
-class BrimoFinalReplication extends StatelessWidget {
+class BriMoFinalReplication extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:Color(0xFFF4F7FA),
-
-      //--NAVIGATION BAWAH LENGKAP--
-      floatingActionButtonLocation:FloatingActionButtonLocation.centerDockedc,
-      floatingActionButton:FloatingActionButton(
-        onPressed:(){},
-        backgroundColor:Color(0xff0074d9),
-        shape:CircleBorder(),
-        child:Icon(Icon.qr_code_scanner,color:Colos.whitw, size:30),
+      backgroundColor: Color(0xFFF4F7FA),
+      // --- NAVIGATION BAWAH LENGKAP ---
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: Color(0xFF0074D9),
+        shape: CircleBorder(),
+        child: Icon(Icons.qr_code_scanner, color: Colors.white, size: 30),
       ),
-      bottomNavigationBar:BottomAppBar(
-        Shape: CircularNotchedRectangle(),
-        notchMargin:8,
+      bottomNavigationBar: BottomAppBar(
+        shape: CircularNotchedRectangle(),
+        notchMargin: 8,
         child: Container(
-          height:60,
-          child:Row(
-            mainAxisAlignment:MainAxisAlignment.SpaceAround,
+          height: 60,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              _buildBottomIcon(Icons.home,"Home", true),
-               _buildBottomIcon(Icons.sync_alt,"Mutasi", false),
-               SizedBox(widht:40), //Ruang untuk tombol QRIS
-               _buildBottomIcon(Icons.notifications_none,"Aktivitas", false),
-               _buildBottomIcon(Icons.person_outline,"Akun", false), 
-            ]
+              _buildBottomIcon(Icons.home, "Home", true),
+              _buildBottomIcon(Icons.sync_alt, "Mutasi", false),
+              SizedBox(width: 40), // Ruang untuk tombol QRIS
+              _buildBottomIcon(Icons.notifications_none, "Aktivitas", false),
+              _buildBottomIcon(Icons.person_outline, "Akun", false),
+            ],
           ),
         ),
       ),
-      body:SingleChildScrollView(
-        child: column(
-          childern: [
-            // 1. HEADER BIRU
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Stack(
+              clipBehavior: Clip.none,
+              children: [
+                // 1. HEADER BIRU
                 Container(
                   height: 220,
                   width: double.infinity,
@@ -61,14 +62,15 @@ class BrimoFinalReplication extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("Selamat malam,", style: TextStyle(color: Colors.white70, fontSize: 14)),
-                          Text("iftahul lailyana", style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
+                          Text("Selamat Siang,", style: TextStyle(color: Colors.white70, fontSize: 14)),
+                          Text("Fatimatus", style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
                         ],
                       ),
                       Icon(Icons.headset_mic_outlined, color: Colors.white),
                     ],
                   ),
                 ),
+
                 // 2. KOTAK PUTIH 1 (SALDO & TRANSFER JADI SATU)
                 Positioned(
                   top: 130,
@@ -99,36 +101,39 @@ class BrimoFinalReplication extends StatelessWidget {
                     ),
                   ),
                 ),
-          ],
-        ),
-        SizedBox(height: 180), //jarak aman
-        // 3. KOTAK PUTIH 2 (PROMO WARNA BIRU)
-       padding(
-        padding: EdgeInsets.symmetric(horizontal: 15, vertical: 8),
-        child: container(
-          padding: EdgeInsets.all(15),
-          ecoration: BoxDecoration(
-            gradient: LinearGradient(colors: [Color(0xFF00529C), Color(0xFF0074D9)]),
-            borderRadius: BorderRadius.circular(12),
-          ),
-          child: Row(
-            children: [
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+              ],
+            ),
+
+            SizedBox(height: 180), // Jarak aman
+
+            // 3. KOTAK PUTIH 2 (PROMO WARNA BIRU)
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15, vertical: 8),
+              child: Container(
+                padding: EdgeInsets.all(15),
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(colors: [Color(0xFF00529C), Color(0xFF0074D9)]),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Row(
                   children: [
-                    Text("Lengkapi Liburanmu", style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: Colors.white)),
-                    Text("Solusi Pinjaman praktis s.d. Rp 50 juta!", style: TextStyle(fontSize: 10, color: Colors.white70)),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Lengkapi Libur Lebaranmu", style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: Colors.white)),
+                          Text("Solusi pinjaman praktis s.d. Rp 50 juta!", style: TextStyle(fontSize: 10, color: Colors.white70)),
+                        ],
+                      ),
+                    ),
+                    Icon(Icons.arrow_forward_ios, size: 14, color: Colors.white),
                   ],
                 ),
               ),
-              Icon(Icons.arrow_forward_ios, size: 14, color: Colors.white),
-            ],
-          ),
-        ),
-       ) ,
-       // 4. KOTAK PUTIH 3 (PENCAIRAN)
-       Padding(
+            ),
+
+            // 4. KOTAK PUTIH 3 (PENCARIAN)
+            Padding(
               padding: EdgeInsets.symmetric(horizontal: 15, vertical: 8),
               child: Container(
                 padding: EdgeInsets.all(12),
@@ -163,7 +168,31 @@ class BrimoFinalReplication extends StatelessWidget {
                 ),
               ),
             ),
-      )
-    )
+
+            // 5. GRID MENU BAWAH (8 ITEM LENGKAP)
+            Padding(
+              padding: EdgeInsets.all(10),
+              child: GridView.count(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                crossAxisCount: 4,
+                mainAxisSpacing: 15,
+                children: [
+                  _buildGridItem(Icons.wallet, "Top Up", Colors.green),
+                  _buildGridItem(Icons.credit_card, "BRIZZI", Colors.blue),
+                  _buildGridItem(Icons.receipt_long, "Tagihan", Colors.orange),
+                  _buildGridItem(Icons.swap_horiz, "Transfer", Colors.blue),
+                  _buildGridItem(Icons.shopping_bag, "Lifestyle", Colors.pink),
+                  _buildGridItem(Icons.atm, "Setor & Tarik", Colors.blue),
+                  _buildGridItem(Icons.bar_chart, "Investasi", Colors.orange),
+                  _buildGridItem(Icons.more_horiz, "Lainnya", Colors.grey),
+                ],
+              ),
+            ),
+            SizedBox(height: 20),
+          ],
+        ),
+      ),
+    );
   }
 }
