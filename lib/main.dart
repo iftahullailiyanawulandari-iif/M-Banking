@@ -69,8 +69,38 @@ class BrimoFinalReplication extends StatelessWidget {
                     ],
                   ),
                 ),
-          ]
-        )
+                // 2. KOTAK PUTIH 1 (SALDO & TRANSFER JADI SATU)
+                Positioned(
+                  top: 130,
+                  left: 15,
+                  right: 15,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(15),
+                      boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 5)],
+                    ),
+                    child: Column(
+                      children: [
+                        _buildBlueSaldoCard(),
+                        Padding(
+                          padding: EdgeInsets.symmetric(vertical: 15),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              _buildTopMenu(Icons.send, "Transfer", Colors.blue),
+                              _buildTopMenu(Icons.receipt, "BRIVA", Colors.teal),
+                              _buildTopMenu(Icons.water_drop, "PDAM", Colors.blueAccent),
+                              _buildTopMenu(Icons.phone_android, "Pulsa/Data", Colors.green),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+          ],
+        ),
       )
     )
   }
