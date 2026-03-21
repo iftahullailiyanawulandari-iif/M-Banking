@@ -228,4 +228,18 @@ class BriMoFinalReplication extends StatelessWidget {
     );
   }
 
+  Widget _buildGridItem(IconData icon, String label, Color color) {
+    return Column(
+      children: [
+        Container(
+          padding: EdgeInsets.all(10),
+          decoration: BoxDecoration(color: color.withOpacity(0.1), shape: BoxShape.circle),
+          child: Icon(icon, color: color, size: 22),
+        ),
+        SizedBox(height: 4),
+        Text(label, textAlign: TextAlign.center, style: TextStyle(fontSize: 9, fontWeight: FontWeight.w500)),
+      ],
+    );
+  }
+
 }
