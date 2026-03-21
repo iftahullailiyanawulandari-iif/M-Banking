@@ -63,7 +63,7 @@ class BriMoFinalReplication extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text("Selamat Siang,", style: TextStyle(color: Colors.white70, fontSize: 14)),
-                          Text("Fatimatus", style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
+                          Text("Iftahul Lailyana", style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
                         ],
                       ),
                       Icon(Icons.headset_mic_outlined, color: Colors.white),
@@ -195,4 +195,37 @@ class BriMoFinalReplication extends StatelessWidget {
       ),
     );
   }
+
+  // --- WIDGET HELPERS ---
+
+  Widget _buildBlueSaldoCard() {
+    return Container(
+      margin: EdgeInsets.all(10),
+      padding: EdgeInsets.all(15),
+      decoration: BoxDecoration(color: Color(0xFF004A8E), borderRadius: BorderRadius.circular(12)),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text("Saldo Rekening Utama", style: TextStyle(color: Colors.white70, fontSize: 11)),
+                  Text("4.800.000", style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
+                ],
+              ),
+              Icon(Icons.visibility_off, color: Colors.white70, size: 20),
+            ],
+          ),
+          Divider(color: Colors.white24, height: 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [Text("Semua Rekeningmu", style: TextStyle(color: Colors.white, fontSize: 12)), Icon(Icons.chevron_right, color: Colors.white, size: 18)],
+          ),
+        ],
+      ),
+    );
+  }
+
 }
