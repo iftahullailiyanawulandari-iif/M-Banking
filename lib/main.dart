@@ -62,7 +62,7 @@ class BriMoFinalReplication extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("Selamat Siang,", style: TextStyle(color: Colors.white70, fontSize: 14)),
+                          Text("Selamat Sore,", style: TextStyle(color: Colors.white70, fontSize: 14)),
                           Text("Iftahul Lailyana", style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
                         ],
                       ),
@@ -212,7 +212,7 @@ class BriMoFinalReplication extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text("Saldo Rekening Utama", style: TextStyle(color: Colors.white70, fontSize: 11)),
-                  Text("4.800.000", style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
+                  Text("5.200.000", style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
                 ],
               ),
               Icon(Icons.visibility_off, color: Colors.white70, size: 20),
@@ -225,6 +225,16 @@ class BriMoFinalReplication extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  Widget _buildTopMenu(IconData icon, String label, Color color) {
+    return Column(
+      children: [
+        Icon(icon, color: color, size: 26),
+        SizedBox(height: 4),
+        Text(label, style: TextStyle(fontSize: 10, fontWeight: FontWeight.w500)),
+      ],
     );
   }
 
@@ -241,7 +251,8 @@ class BriMoFinalReplication extends StatelessWidget {
       ],
     );
   }
-   Widget _buildBottomIcon(IconData icon, String label, bool isActive) {
+
+  Widget _buildBottomIcon(IconData icon, String label, bool isActive) {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
