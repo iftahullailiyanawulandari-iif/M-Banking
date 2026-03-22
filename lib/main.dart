@@ -241,5 +241,13 @@ class BriMoFinalReplication extends StatelessWidget {
       ],
     );
   }
-
+   Widget _buildBottomIcon(IconData icon, String label, bool isActive) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Icon(icon, color: isActive ? Colors.blue : Colors.grey, size: 24),
+        Text(label, style: TextStyle(color: isActive ? Colors.blue : Colors.grey, fontSize: 10)),
+      ],
+    );
+  }
 }
